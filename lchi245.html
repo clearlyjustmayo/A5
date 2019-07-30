@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href = "lchi245.css">
+<script src="lchi245.js"></script>
+<title>La Boutique - Cassee</title>
+</head>
+<body>
+
+<nav id="nav" class="sidebar">
+  <a href="javascript:controlNav()" class="btn" style = "display:inline;" >&#9776;</a>
+  <section id="hidetog" >
+  <span ><a href="javascript:show('login')" style = "display:inline;" id = "login1" >Login</a><a id = "loggedin" style = "display:none;">Logged in</a>/<a href="javascript:show('reg')" style = "display:inline;" >Register</a></span>
+  <a href="javascript:show('home')">Home</a>
+  <a href="javascript:get('brlist');show('br')">Blu-Ray</a>
+  <a href="javascript:get('booklist');show('book')">Books</a>
+  <a href="javascript:get('htmlcomments');show('comment')">Comments</a>
+  </section>
+  </section>
+</nav>
+<div id="main">
+<span>
+	<img id="logo" src="http://localhost:8188/Service.svc/logo" alt="pix"/>
+	<code id = "logged" style = "display:none" > Logged in (<a href = "javascript:logout()">logout</a>)</code>
+	
+</span>
+<div id="reg">
+	<h1> Register to Use Exclusive Purchasing Powers ^^</h1>
+	<form action="javascript:registerthisdamnthing()">
+	Address: <input type="text" placeholder="Enter Address here" id="address"/><br><br>
+	Username: <input type="text" placeholder="Enter Username here" id="user"/><br><br>
+	Password: <input type="password" placeholder="Enter PW here" id="pw"/><br><br>
+	<input type="submit" value="Register :)"/>
+	</form>
+</div>
+<!--Dummylogin doesn't do a thing-->
+<div id="login">
+	<h1> Welcome Back to dis site</h1>
+	<form action="javascript:login()">
+	Username: <input type="text" placeholder="Enter Username here" id="urnm"/><br><br>
+	Password: <input type="password" placeholder="Enter PW here" id="pswd"/><br><br>
+	<input type="submit" value="Logon Now"/>
+	</form>
+	<span><h2 id="fail">Login Unsuccessful</h2><h2 id = "valid">Login Successful. Please wait...</h2></span>
+</div>
+<div id="home">
+	<a id="showhome">
+		<p>Welcome to La Boutique - Cassee, please open the side menu to access bluray, books and other things.</p>
+		<p>La Boutique Cassée is an online shop selling books and blurays. 
+		The shop uses a service-oriented architecture with a 
+		customer-facing UI front-end, and a service back-end. The service back-end consists of 
+		two separate services and associated RESTful interfaces. 
+		One of the services is open to all, and allows the user to browse and search through the shop. 
+		It also allows a user to place and view comments on the shop,
+		as well as to register at the shop. The other service is only 
+		for registered users and this allows purchasing of items. 
+		Registered users are required to authenticate before using this service.
+		
+	</p>
+	<footer>*Login is a placeholder atm doesn't do a thing.</footer>
+	</a>
+</div>
+<div id="br">
+	<section>
+		<input placeholder="Search for bluray" id="brsearch_data" type="text" onkeydown="search('br')" />
+		<input id="brsearch" type="button" value="Search" onclick="search('br')"/>
+		<a id="showbr"></a>
+	</section>
+   </div>
+<div id="book">
+    <section>
+		<input placeholder="Search for book" id="booksearch_data" type="text" onkeydown="search('book')" />
+		<input id="booksearch" type="button" value="Search" onclick="search('book')"/>
+		<a id="showbook"></a>
+    </section>
+</div>
+<div id="comment">
+<section>
+		<h1>Your Comments</h1>
+		<input placeholder="Put a name here please" cols="40" id="commentname" type="text"/>
+		<textarea placeholder="Please post your comment on this service :)" rows="10" cols="60" id="post_data"></textarea>
+		<input id="postcomment" type="button" value="Post" onclick="postcomment()"/>
+		<h1>Recent Comments</h1>
+		<a id="showcomments"></a>
+	</section>
+</div>
+</div>	
+</body>
+</html>
